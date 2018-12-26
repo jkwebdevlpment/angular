@@ -1,0 +1,126 @@
+ <app-reactive-form></app-reactive-form>
+
+
+
+
+
+
+
+
+<!-- 
+<section style="margin-top:50px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label> First Name </label> <br />
+            <input  name="firstName" id ="firstName" type="text" class="form-control" #firstName ="ngModel"[(ngModel)]="feeddata.firstName" style="width:100%"
+              required
+            >
+            <span *ngIf="firstName.touched && !firstName.valid" class="text-danger">
+                 Please enter Your first name
+            </span>
+          </div>
+          <div class="form-group">
+            <label> Email </label> <br />
+            <input type="emali" name="email" class="form-control" [(ngModel)]="feeddata.email" id="email" #email="ngModel" required style="width:100%"
+             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
+            >
+            <span *ngIf="email.touched && !email.valid" class="text-danger">
+              Enter your valid email id
+            </span>
+          </div>
+          <div class="usertype">
+            <span *ngFor = "let ut of usertype" style="margin-right:20px">
+            <label for="{{ut}}">
+              <input 
+              [(ngModel)]="feeddata.type"
+              [value] = "ut"
+              type="radio" 
+              name="usertype"
+               id="{{ut}}"
+               >
+               {{ut}}
+            </label>
+              </span>
+          </div>
+          <div class="form-group">
+            <label>Feedback Name </label>
+            <textarea  name="feedback" [(ngModel)]="feeddata.feed" id="feedback"  class="form-control"#feedback ="ngModel" cols="30" rows="5">
+            </textarea>
+          </div>
+          <div class="dropdown">
+             <label for="plateform"> plateform
+               <select [(ngModel)] = "feeddata.plateform" name="plateform" class="form-control col-xs-12" id="plateform">
+                 <option value="" disabled>Select plateform</option>
+                 <option *ngFor = 'let pl of plateforms' value="{{pl}}">{{pl}} </option>
+
+               </select>
+              </label>
+          </div>
+          <div class="form-group">
+              <button 
+              [disabled]="!f.valid" 
+              name="feedback" type="submit" class="btn btn-primary">
+                Submit
+              </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<section class="cmspage mtb-40">
+  <div class="container">
+    <!-- <input type="text" [(ngModel)] = "setcolor">
+    <h1 [ngStyle] = "{
+      'color': setcolor
+    }" >About</h1>
+  <h2 *ngFor = "let hero of heros"> {{hero}}:
+  <a href="javascript:void(0);" (click)= "likeChange($event)" >
+    <i class="fa" [ngClass]="{
+         'fa-heart active' : likes ,
+         'fa-globe active1' : !likes
+       }"></i>
+  </a>
+</h2>  -->
+<a href="javascript:void(0)" [class.active] = "ganer =='all'" (click) = " ganer = 'all'">All movie  </a> |
+<a href="javascript:void(0)" [class.active] = "ganer == 'action'" (click) = " ganer = 'action'">Action movie  </a> |
+<a href="javascript:void(0)" [class.active] = "ganer == 'fantasy'" (click) = " ganer = 'fantasy'">fantasy movie  </a> |
+<div [ngSwitch] = "ganer">
+  <div *ngSwitchCase = " 'all'">All movie show</div>
+  <div *ngSwitchCase = " 'action'">Action movie show</div>
+  <div *ngSwitchCase = " 'fantasy'">Fantasy movie show</div>
+  <div *ngSwitchDefault>Default movie show</div>
+</div>
+
+  <input woweffect type="text" [(ngModel)]="field" />
+  <h1> {{field}} </h1>
+
+
+  <ul style="list-style-type:none;margin:0;padding:0" *ngFor='let hero of heros ; let i = index'>
+    <li>{{i + 1}} {{hero}}</li>
+  </ul>
+
+
+
+    
+    <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
+    <div class="page-desc">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.</p>
+    </div>
+
+  
+  </div>
+</section>
+
+
